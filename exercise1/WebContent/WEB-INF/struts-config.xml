@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE struts-config PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+   "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+   <form-beans>
+      <form-bean name="CustomerForm" type="actionform.CustomerForm"/>
+   </form-beans>
+   <global-forwards>
+      <forward name="mainpage" path="/index.jsp" />
+   </global-forwards>
+   <action-mappings>
+      <action path="/submitCustomerForm"
+         type="actionform.CustomerAction"
+         name="CustomerForm"
+         scope="request"
+         validate="true"
+         input="/CustomerForm.jsp" cancellable="true">
+         <forward name="success" path="/Success.jsp" />
+         <exception key="errors.cancel"
+                   type="org.apache.struts.action.InvalidCancelException"
+                   path="/index.jsp"/>
+      </action>
+
+   </action-mappings>
+   <controller processorClass="org.apache.struts.action.RequestProcessor"/>
+   <message-resources parameter="actionform.MessageResources"/>
+</struts-config>
