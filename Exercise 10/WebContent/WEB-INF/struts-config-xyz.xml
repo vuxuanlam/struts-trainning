@@ -1,0 +1,32 @@
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+
+    <form-beans>
+	</form-beans>
+
+    <global-forwards>
+    
+		<forward name="gotoDefaultModule" path="/switch.do?page=/showCustomerSearchForm.do&amp;prefix=" />
+		
+    </global-forwards>
+
+    <action-mappings>
+
+		<action path="/switch"
+				type="org.apache.struts.actions.SwitchAction"/>
+
+		<action path="/page1" 
+				parameter="/xyz-page1.jsp" 
+				type="org.apache.struts.actions.ForwardAction" />
+				
+		<action path="/page2" 
+				parameter="/xyz-page2.jsp" 
+				type="org.apache.struts.actions.ForwardAction" />	
+				
+	</action-mappings>
+
+    <controller processorClass="org.apache.struts.action.RequestProcessor" />
+
+    <message-resources parameter="struts.example.XYZMessageResources" null="false" />
+    
+</struts-config>

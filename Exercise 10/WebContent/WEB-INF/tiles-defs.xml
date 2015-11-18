@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+ <!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN"
+       "http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+
+
+
+<tiles-definitions>
+
+	<definition name="base.definition" path="/Layout.jsp">
+		<put name="title" value=""/>
+		<put name="header" value="/common/header.jsp" />
+		<put name="footer" value="/common/footer.jsp" />
+		<put name="body" value="" />
+	</definition>
+
+	<definition name="search.page" extends="base.definition">
+		<put name="title" value="Customer Search and List"/>
+		<put name="body" value="/CustomerSearchList.jsp" />
+	</definition>
+
+	<definition name="customer.page" extends="base.definition">
+		<put name="title" value="XYZ Co. Please enter your details"/>
+		<put name="body" value="/CustomerForm.jsp" />
+	</definition>
+
+	<definition name="dberror.page" extends="base.definition">
+		<put name="title" value="An error occured"/>
+		<put name="body" value="/DatabaseError.jsp" />
+	</definition>
+	
+</tiles-definitions>
